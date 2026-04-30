@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Background -->
+  <rect width="32" height="32" fill="#1C1826"/>
+  <!-- Outer border -->
+  <rect x="1.5" y="1.5" width="29" height="29" fill="none" stroke="#F0607A" stroke-width="1.5"/>
+  <!-- Inner dividers forming 2x2 grid -->
+  <line x1="16" y1="1.5" x2="16" y2="30.5" stroke="#F0607A" stroke-width="1"/>
+  <line x1="1.5" y1="16" x2="30.5" y2="16" stroke="#F0607A" stroke-width="1"/>
+  <!-- Four H letters -->
+  <!-- Top-left H -->
+  <text x="4" y="13.5" font-family="Arial Black, Arial" font-weight="900" font-size="9" fill="#F0607A">H</text>
+  <!-- Top-right H -->
+  <text x="18" y="13.5" font-family="Arial Black, Arial" font-weight="900" font-size="9" fill="#F0607A">H</text>
+  <!-- Bottom-left H -->
+  <text x="4" y="27.5" font-family="Arial Black, Arial" font-weight="900" font-size="9" fill="#F0607A">H</text>
+  <!-- Bottom-right H -->
+  <text x="18" y="27.5" font-family="Arial Black, Arial" font-weight="900" font-size="9" fill="#F0607A">H</text>
+</svg>
