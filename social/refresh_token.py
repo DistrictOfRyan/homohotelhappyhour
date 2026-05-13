@@ -22,7 +22,7 @@ from datetime import date
 from pathlib import Path
 
 APP_ID      = "1468075241636760"
-PAGE_ID     = "61589412247344"
+PAGE_ID     = "1158982793957912"   # Graph API asset ID (NOT the profile URL ID 61589412247344)
 SECRET_PATH = Path.home() / ".credentials" / "meta_app_secret_1468075241636760.txt"
 CFG_PATH    = Path(__file__).parent / "meta_api_config.json"
 
