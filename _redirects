@@ -1,0 +1,3 @@
+# Block operational/config files from being web-served (token exposure).
+# The /social/ dir holds automation scripts + API config, never meant for the web.
+/social/*   /   404!
