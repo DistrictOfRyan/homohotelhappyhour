@@ -1,3 +1,16 @@
 # Local Netlify folder
 .netlify
 __pycache__/
+
+# Secrets - never commit (token exposure)
+social/meta_api_config.json
+social/data/
+
+# Local campaign automation system (contains contact emails + business materials - keep local)
+social/campaign/
+social/meetup_client.py
+social/create_hhhh_meetup_event.py
+social/meetup_profile_login.py
+social/post_thisfriday.py
+social/post_campbell.py
+social/MEETUP_SETUP.md

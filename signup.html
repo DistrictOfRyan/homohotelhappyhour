@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Join Homo Hotel Happy Hour</title>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0a0a1c;--pink:#e85d7a;--gold2:#f0c95f;--cream:#f6eedb;--teal:#9cc6dd;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Josefin Sans',sans-serif;background:linear-gradient(180deg,#140d2a,#06060e);color:var(--cream);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+  .card{max-width:520px;width:100%;text-align:center;background:rgba(10,10,28,.55);border:1px solid rgba(240,201,95,.25);border-radius:20px;padding:48px 36px;box-shadow:0 0 60px rgba(240,201,95,.10)}
+  .eyebrow{letter-spacing:.4em;font-size:13px;color:#9bd9b6;text-transform:uppercase;font-weight:700}
+  h1{font-size:44px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;margin:14px 0 6px;line-height:.95}
+  h1 .g{color:var(--gold2)}
+  .tag{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:var(--pink);margin-bottom:26px}
+  form{display:flex;flex-direction:column;gap:14px;margin-top:10px}
+  input{padding:15px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:var(--cream);font-size:16px;font-family:inherit}
+  input::placeholder{color:rgba(246,238,219,.5)}
+  button{padding:15px;border-radius:999px;border:none;background:var(--gold2);color:#0a0a1c;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:15px;cursor:pointer;font-family:inherit}
+  .fine{margin-top:18px;font-size:13px;color:var(--teal);font-weight:300;letter-spacing:.04em}
+  .brand{margin-top:30px;letter-spacing:.2em;font-size:13px;font-weight:700;text-transform:uppercase;color:var(--cream)}
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="eyebrow">Tulsa's Monthly Queer Mixer</div>
+    <h1>Never miss a <span class="g">First Friday.</span></h1>
+    <div class="tag">Free events, new venue every month.</div>
+    <form name="hhhh-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/signup-thanks.html">
+      <input type="hidden" name="form-name" value="hhhh-signup">
+      <p style="display:none"><label>Skip: <input name="bot-field"></label></p>
+      <input type="text" name="name" placeholder="First name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <button type="submit">Keep me posted</button>
+    </form>
+    <div class="fine">We only email about upcoming First Fridays. No spam, unsubscribe anytime.</div>
+    <div class="brand">Homo Hotel Happy Hour</div>
+  </div>
+</body>
+</html>
