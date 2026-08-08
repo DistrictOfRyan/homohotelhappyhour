@@ -55,7 +55,8 @@
           "byMonthWeek": 1,
           "startTime": "18:00:00",
           "endTime": "20:00:00",
-          "scheduleTimezone": "America/Chicago"
+          "scheduleTimezone": "America/Chicago",
+          "exceptDate": "2026-09-04"
         },
         "location": {
           "@type": "City",
@@ -71,6 +72,30 @@
         "organizer": { "@id": "https://homohotelhappyhour.com/#organization" }
       },
       {
+        "@type": "Event",
+        "@id": "https://homohotelhappyhour.com/#event-2026-09",
+        "name": "Homo Hotel Happy Hour: September 2026",
+        "description": "September's Homo Hotel Happy Hour moves off the usual first Friday to Friday, September 11, 2026, at a Tulsa hotel bar to be announced. Free admission, charity raffle all night.",
+        "startDate": "2026-09-11T18:00:00-05:00",
+        "endDate": "2026-09-11T20:00:00-05:00",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "isAccessibleForFree": true,
+        "location": {
+          "@type": "City",
+          "name": "Tulsa, Oklahoma"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.meetup.com/tulsa-4h-homo-hotel-happy-hour/"
+        },
+        "organizer": { "@id": "https://homohotelhappyhour.com/#organization" },
+        "superEvent": { "@id": "https://homohotelhappyhour.com/#event-series" }
+      },
+      {
         "@type": "FAQPage",
         "@id": "https://homohotelhappyhour.com/#faq",
         "mainEntity": [
@@ -82,7 +107,7 @@
           {
             "@type": "Question",
             "name": "When and where is the next Homo Hotel Happy Hour?",
-            "acceptedAnswer": { "@type": "Answer", "text": "4H happens on the first Friday of every month at a rotating Tulsa hotel bar. The upcoming venue and date are always posted at the top of this page and on our Meetup. RSVP on Meetup or join our Facebook group to get the details each month." }
+            "acceptedAnswer": { "@type": "Answer", "text": "4H happens on the first Friday of every month at a rotating Tulsa hotel bar, with one exception: September 2026 moves to Friday, September 11 (venue still to be announced). The upcoming venue and date are always posted at the top of this page and on our Meetup. RSVP on Meetup or join our Facebook group to get the details each month." }
           },
           {
             "@type": "Question",
@@ -1854,6 +1879,7 @@
     <div class="next-inner">
       <span class="s-eyebrow">Mark Your Calendar</span>
       <h2 class="s-title" style="margin-bottom:0.5rem;">The Next Party Is <em>Coming.</em></h2>
+      <p style="margin:0.25rem 0 1rem;opacity:0.8;font-size:0.95rem;">Heads up: September's HHHH is not a first Friday this year. It moves to <strong>Friday, September 11</strong> (venue to be announced).</p>
       <div class="event-meta">
         <div class="meta-item">
           <span class="meta-icon">📅</span>
@@ -2136,7 +2162,7 @@
 
       <details class="faq-item" style="border-top:1px solid rgba(246,238,219,0.18);padding:1.15rem 0;">
         <summary style="cursor:pointer;font-family:'Josefin Sans',sans-serif;font-weight:600;font-size:1.15rem;letter-spacing:0.01em;">When and where is the next Homo Hotel Happy Hour?</summary>
-        <p style="margin-top:0.8rem;opacity:0.86;line-height:1.65;">4H happens on the first Friday of every month at a rotating Tulsa hotel bar. The upcoming venue and date are always posted at the top of this page and on our Meetup. RSVP on Meetup or join our Facebook group to get the details each month.</p>
+        <p style="margin-top:0.8rem;opacity:0.86;line-height:1.65;">4H happens on the first Friday of every month at a rotating Tulsa hotel bar, with one exception: September 2026 moves to Friday, September 11 (venue still to be announced). The upcoming venue and date are always posted at the top of this page and on our Meetup. RSVP on Meetup or join our Facebook group to get the details each month.</p>
       </details>
 
       <details class="faq-item" style="border-top:1px solid rgba(246,238,219,0.18);padding:1.15rem 0;">
