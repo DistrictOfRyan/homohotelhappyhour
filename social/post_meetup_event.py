@@ -44,6 +44,33 @@ def ordinal(n):
     return f"{n}{'th' if 11 <= n % 100 <= 13 else {1:'st',2:'nd',3:'rd'}.get(n % 10, 'th')}"
 
 
+def dismiss_promo_modals(pg):
+    """Close Meetup promo dialogs (e.g. the event-chat upsell, seen 2026-08-24) that
+    sit over the composer and intercept clicks. Only fires when an overlay is up."""
+    try:
+        for _ in range(3):
+            overlay = pg.query_selector("div[data-slot='modal-overlay']")
+            if not overlay or not overlay.is_visible():
+                return
+            closed = False
+            for btn in pg.query_selector_all(
+                    "div[data-slot='modal-content'] button[aria-label*='lose'],"
+                    "div[data-slot='modal-content'] button:has-text('Not now'),"
+                    "div[data-slot='modal-content'] button:has-text('No thanks'),"
+                    "div[data-slot='modal-content'] button:has-text('Got it'),"
+                    "div[data-slot='modal-content'] button:has-text('Maybe later')"):
+                try:
+                    if btn.is_visible():
+                        btn.click(); pg.wait_for_timeout(800); closed = True; break
+                except Exception:
+                    pass
+            if not closed:
+                pg.keyboard.press("Escape"); pg.wait_for_timeout(800)
+            print("[ok] dismissed a promo modal")
+    except Exception as e:
+        print(f"[warn] modal dismissal: {e}")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--event", default=str(HERE / "event_2026-08.json"))
@@ -79,8 +106,10 @@ def main():
             print("[ok] start from scratch")
 
         # 2) title
+        dismiss_promo_modals(pg)
         pg.fill("#title", ev["title"]); pg.wait_for_timeout(500)
         print("[ok] title")
+        dismiss_promo_modals(pg)
 
         # 3) date -> open calendar, page to target month, click the day
         datebtn = None
