@@ -2,6 +2,9 @@
 .netlify
 __pycache__/
 
+# Local design-hook cache, regenerable, never deploy
+.impeccable/
+
 # Secrets - never commit (token exposure)
 social/meta_api_config.json
 social/data/

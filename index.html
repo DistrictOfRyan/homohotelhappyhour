@@ -131,7 +131,7 @@
           {
             "@type": "Question",
             "name": "How do I attend or get involved?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Just show up on the first Friday, or RSVP on Meetup and join our Facebook group so you never miss a venue announcement. Want to nominate a charity or co-host? Message us on Instagram @homohotelhappyhour." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Just show up on the first Friday. To get the venue in your inbox, join our email list, or RSVP on Meetup and join our Facebook group so you never miss a venue announcement. Want to nominate a charity or co-host? Message us on Instagram @homohotelhappyhour." }
           }
         ]
       }
@@ -286,7 +286,7 @@
     .nav-donate:hover { background: var(--flamingo2) !important; color: var(--white) !important; }
 
     /* ════════════════════════════════════════════════
-       HERO — Photo Slideshow
+       HERO: Photo Slideshow
     ════════════════════════════════════════════════ */
     .hero {
       position: relative;
@@ -323,7 +323,7 @@
         linear-gradient(to right, rgba(28,24,38,0.7) 0%, transparent 60%);
     }
 
-    /* Retro dot pattern overlay — atomic age */
+    /* Retro dot pattern overlay, atomic age */
     .hero-dots {
       position: absolute;
       inset: 0;
@@ -575,7 +575,7 @@
     .strip-img:hover { filter: brightness(1.1); }
 
     /* ════════════════════════════════════════════════
-       STORY INTRO — Flamingo background
+       STORY INTRO: Flamingo background
     ════════════════════════════════════════════════ */
     .story {
       background: var(--flamingo);
@@ -799,7 +799,7 @@
     }
 
     /* ════════════════════════════════════════════════
-       STATS — Dark with turquoise dots
+       STATS: Dark with turquoise dots
     ════════════════════════════════════════════════ */
     .stats {
       background: var(--dark);
@@ -865,7 +865,7 @@
     }
 
     /* ════════════════════════════════════════════════
-       NEXT EVENT — Turquoise diagonal stripe
+       NEXT EVENT: Turquoise diagonal stripe
     ════════════════════════════════════════════════ */
     .next-event {
       background: var(--turquoise);
@@ -1219,7 +1219,7 @@
     .cc-card:hover .cc-link { color: var(--turquoise); }
 
     /* ════════════════════════════════════════════════
-       PHOTO GALLERY — Masonry
+       PHOTO GALLERY: Masonry
     ════════════════════════════════════════════════ */
     .gallery {
       background: var(--dark);
@@ -1246,6 +1246,10 @@
 
     .g-item img {
       width: 100%;
+      /* height:auto is REQUIRED. The imgs carry width/height attributes so the
+         browser can reserve space before they load, and without this the
+         attribute height is used literally and every photo stretches. */
+      height: auto;
       display: block;
       transition: transform 0.6s ease, filter 0.3s;
     }
@@ -1253,6 +1257,16 @@
     .g-item:hover img {
       transform: scale(1.05);
       filter: brightness(1.08);
+    }
+
+    .g-divider {
+      max-width: 1200px;
+      margin: 3.25rem auto 1.25rem;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--flamingo);
     }
 
     .gallery-footer {
@@ -1723,7 +1737,7 @@
       <div class="hero-slide active" style="background-image:url('photos/DSC00278.jpg')"></div>
       <div class="hero-slide"        style="background-image:url('photos/DSC00174.jpg')"></div>
       <div class="hero-slide"        style="background-image:url('photos/DSC00265.jpg')"></div>
-      <div class="hero-slide"        style="background-image:url('photos/DSC00321.jpg');background-position:center center;"></div>
+      <div class="hero-slide"        style="background-image:url('photos/DSC00321-web.jpg');background-position:center center;"></div>
       <div class="hero-slide"        style="background-image:url('photos/DSC00197.jpg')"></div>
     </div>
     <div class="hero-overlay"></div>
@@ -1749,6 +1763,7 @@
       <div class="hero-typewriter"><span id="tw"></span><span class="cursor"></span></div>
       <div class="hero-ctas">
         <a href="https://www.meetup.com/tulsa-4h-homo-hotel-happy-hour/" target="_blank" rel="noopener" class="btn btn-flamingo">RSVP on Meetup</a>
+        <a href="signup.html" class="btn btn-turquoise">Email Me the Venue &rsaquo;</a>
         <a href="https://venmo.com/u/homohotelhappyhour" target="_blank" rel="noopener" class="btn btn-gold">Donate &rsaquo;</a>
         <a href="#story" class="btn btn-ghost-light">Our Story</a>
       </div>
@@ -1770,20 +1785,28 @@
   <div class="photo-strip">
     <p class="strip-label">The Campbell Hotel, July 3, 2026</p>
     <div class="strip-track" id="strip">
-      <img class="strip-img" src="photos/DSC03338.jpg" alt="Guest laughing with a cocktail" />
-      <img class="strip-img" src="photos/DSC03350.jpg" alt="Friends laughing at the bar" />
-      <img class="strip-img" src="photos/DSC03390.jpg" alt="New friends meeting at 4H" />
-      <img class="strip-img" src="photos/DSC03447.jpg" alt="Guests in pride colors laughing" />
-      <img class="strip-img" src="photos/DSC03310.jpg" alt="Two guests sharing a laugh over wine" />
-      <img class="strip-img" src="photos/DSC03434.jpg" alt="A warm hug at the bar" />
-      <img class="strip-img" src="photos/DSC03364.jpg" alt="Guests talking over drinks" />
-      <img class="strip-img" src="photos/DSC03301.jpg" alt="Guest raising a glass" />
-      <img class="strip-img" src="photos/DSC02352.jpg" alt="Guests laughing at the table" />
-      <!-- Duplicates for seamless loop -->
-      <img class="strip-img" src="photos/DSC03338.jpg" alt="Guest laughing with a cocktail" />
-      <img class="strip-img" src="photos/DSC03350.jpg" alt="Friends laughing at the bar" />
-      <img class="strip-img" src="photos/DSC03390.jpg" alt="New friends meeting at 4H" />
-      <img class="strip-img" src="photos/DSC03447.jpg" alt="Guests in pride colors laughing" />
+      <img class="strip-img" src="photos/DSC03338.jpg" alt="Guest laughing with a cocktail" width="1066" height="1600" loading="lazy" />
+      <img class="strip-img" src="photos/DSC03350.jpg" alt="Friends laughing at the bar" width="1066" height="1600" loading="lazy" />
+      <img class="strip-img" src="photos/DSC03390.jpg" alt="New friends meeting at 4H" width="1600" height="1066" loading="lazy" />
+      <img class="strip-img" src="photos/DSC03447.jpg" alt="Guests in pride colors laughing" width="1066" height="1600" loading="lazy" />
+      <img class="strip-img" src="photos/DSC03310.jpg" alt="Two guests sharing a laugh over wine" width="1600" height="1066" loading="lazy" />
+      <img class="strip-img" src="photos/DSC03434.jpg" alt="A warm hug at the bar" width="1600" height="1066" loading="lazy" />
+      <img class="strip-img" src="photos/DSC03364.jpg" alt="Guests talking over drinks" width="1600" height="1066" loading="lazy" />
+      <img class="strip-img" src="photos/DSC03301.jpg" alt="Guest raising a glass" width="1600" height="1066" loading="lazy" />
+      <img class="strip-img" src="photos/DSC02352.jpg" alt="Guests laughing at the table" width="1600" height="1066" loading="lazy" />
+      <!-- Second half must be an EXACT copy of the first half. The scrollLeft
+           keyframe translates the track by -50%, so any mismatch in count makes
+           the loop jump. It used to carry only 4 of the 9, which is why it did.
+           The copies are aria-hidden so a screen reader hears each photo once. -->
+      <img class="strip-img" src="photos/DSC03338.jpg" alt="" aria-hidden="true" width="1066" height="1600" loading="lazy" />
+      <img class="strip-img" src="photos/DSC03350.jpg" alt="" aria-hidden="true" width="1066" height="1600" loading="lazy" />
+      <img class="strip-img" src="photos/DSC03390.jpg" alt="" aria-hidden="true" width="1600" height="1066" loading="lazy" />
+      <img class="strip-img" src="photos/DSC03447.jpg" alt="" aria-hidden="true" width="1066" height="1600" loading="lazy" />
+      <img class="strip-img" src="photos/DSC03310.jpg" alt="" aria-hidden="true" width="1600" height="1066" loading="lazy" />
+      <img class="strip-img" src="photos/DSC03434.jpg" alt="" aria-hidden="true" width="1600" height="1066" loading="lazy" />
+      <img class="strip-img" src="photos/DSC03364.jpg" alt="" aria-hidden="true" width="1600" height="1066" loading="lazy" />
+      <img class="strip-img" src="photos/DSC03301.jpg" alt="" aria-hidden="true" width="1600" height="1066" loading="lazy" />
+      <img class="strip-img" src="photos/DSC02352.jpg" alt="" aria-hidden="true" width="1600" height="1066" loading="lazy" />
     </div>
   </div>
 
@@ -1808,7 +1831,7 @@
         <a href="#next-event" class="btn btn-ghost-light" style="margin-top:0.5rem;">See the Next Event &rsaquo;</a>
       </div>
       <div class="story-photo-wrap reveal d2">
-        <img class="story-photo-main" src="photos/DSC02187.jpg" alt="4H guests laughing together" />
+        <img class="story-photo-main" src="photos/DSC02187.jpg" alt="4H guests laughing together" width="1066" height="1600" loading="lazy" />
         <p class="story-photo-caption">4H First Friday, May 2026</p>
       </div>
     </div>
@@ -1852,6 +1875,35 @@
 
 
   <!-- ══ STATS ════════════════════════════════════════════════ -->
+  <!--
+    MISSING STAT: total dollars raised for Tulsa charities to date.
+
+    This row is the strongest place on the page for it. The charity section
+    below says "Every 4H event raises money for a local Tulsa charity" and
+    never says how much, and for a nonprofit that is the one number a
+    skeptical reader actually checks.
+
+    It is deliberately absent rather than estimated. As of 2026-09-08 no
+    cumulative total exists in any 4H record. Per-event figures exist for
+    four months but they measure four different things (one is a Venmo
+    inflow, one is a payout to the charity, one is a raffle gross, one is
+    raffle plus cash sales), the April 2026 event has no figure at all, and
+    the Oklahomans for Equality month has none either. Adding those numbers
+    together would produce a total that is not true of anything.
+
+    WHO WOULD KNOW: Kevin Trent Pearson, President and Registered Agent.
+    He holds the Venmo account, the bank account, and mails the charity
+    checks, and he reports each event's breakdown after the fact. The raw
+    material is in the "06 Finances" folder in his Google Drive plus the
+    bank statements.
+
+    TO FILL THIS IN: ask Kevin for a single reconciled figure on one
+    consistent basis (recommended: total actually paid out to beneficiaries,
+    since that is what a donor cares about), including the April and OkEq
+    months. Then add a fifth tile here, e.g. "$X,XXX / Raised for Tulsa
+    Charities / paid out since February 2026", and mirror it into
+    llms.txt under ## Stats. Do not publish a figure until it is reconciled.
+  -->
   <section class="stats">
     <div class="stats-grid">
       <div class="stat reveal">
@@ -1916,9 +1968,12 @@
       <p style="margin:0.75rem 0 1.5rem;opacity:0.85;font-size:1rem;">8202 S 100th E Ave, near 81st and Mingo, one easy shot down Highway 169. This month we're taking the party to South Tulsa, and the hotel is throwing in pool access. Always free, and the charity raffle benefits Council Oak Men's Chorale. Gas up, grab your people, and meet us down south.</p>
       <div class="event-btns">
         <a href="https://www.meetup.com/tulsa-4h-homo-hotel-happy-hour/" target="_blank" rel="noopener" class="btn btn-dark">RSVP on Meetup</a>
+        <!-- gold, not turquoise: this section's background IS turquoise -->
+        <a href="signup.html" class="btn btn-gold">Email Me the Venue &rsaquo;</a>
         <a href="https://www.facebook.com/groups/homohotelhappyhour" target="_blank" rel="noopener" class="btn btn-ghost-light">Facebook Event</a>
         <a href="https://maps.google.com/?q=Hilton+Garden+Inn+Tulsa+South+8202+S+100th+E+Ave+Tulsa+OK+74133" target="_blank" rel="noopener" class="btn btn-ghost-light">Get Directions &rsaquo;</a>
       </div>
+      <p style="margin:1.25rem 0 0;font-size:0.9rem;opacity:0.8;">Every month lands in a different hotel bar, so the venue is the one thing worth knowing early. <a href="signup.html" style="color:var(--gold);text-decoration:underline;">Get it by email</a> and you never have to hunt for it.</p>
     </div>
   </section>
 
@@ -1932,7 +1987,7 @@
         <p class="brut-intro">September is a field trip, darlings. Labor Day took our First Friday, so we moved the party to Friday the 11th and pointed the caravan south. The Hilton Garden Inn South sits at 81st and Mingo, one straight shot down Highway 169, and they're rolling out the welcome mat with pool access included. New part of town, same crowd, same zero dollars at the door. This month the raffle sings for Council Oak Men's Chorale.</p>
       </div>
       <div style="max-width:560px;margin:2rem auto 0;text-align:center;" class="reveal">
-        <img src="photos/2026-09-announce-feed.png" alt="HHHH Second Friday September 11 2026 at Hilton Garden Inn Tulsa South, 8202 S 100th E Ave, Tulsa. Six to eight PM, always free, charity raffle benefiting Council Oak Men's Chorale." style="width:100%;height:auto;border-radius:18px;box-shadow:0 30px 60px rgba(0,0,0,0.25);" />
+        <img src="photos/2026-09-announce-feed-web.jpg" alt="HHHH Second Friday September 11 2026 at Hilton Garden Inn Tulsa South, 8202 S 100th E Ave, Tulsa. Six to eight PM, always free, charity raffle benefiting Council Oak Men's Chorale." width="1120" height="1120" loading="lazy" style="width:100%;height:auto;border-radius:18px;box-shadow:0 30px 60px rgba(0,0,0,0.25);" />
         <p style="margin-top:1rem;font-size:0.88rem;opacity:0.7;">Save the flyer. Share the flyer. Bring a friend.</p>
       </div>
       <div class="brut-cards">
@@ -1974,8 +2029,8 @@
   <section class="charity" id="charity">
     <div class="charity-inner">
       <div class="charity-photos reveal">
-        <img class="charity-main-img" src="photos/DSC00138.jpg" alt="4H Raffle and Charity Table" />
-        <img class="charity-accent-img" src="photos/DSC00143.jpg" alt="Prize Basket with Wine" />
+        <img class="charity-main-img" src="photos/DSC00138.jpg" alt="The raffle and charity table, tickets going fast" width="1080" height="720" loading="lazy" />
+        <img class="charity-accent-img" src="photos/DSC00143.jpg" alt="A raffle prize basket with wine, donated by a Tulsa neighbor" width="1080" height="720" loading="lazy" />
       </div>
       <div class="charity-text reveal d2">
         <span class="s-eyebrow">More Than a Party</span>
@@ -2049,15 +2104,28 @@
       <p class="s-sub">The Campbell Hotel, July 3, 2026</p>
     </div>
     <div class="gallery-masonry">
-      <div class="g-item reveal"><img src="photos/DSC03338.jpg" alt="Guest laughing with a cocktail" /></div>
-      <div class="g-item reveal d1"><img src="photos/DSC03350.jpg" alt="Friends laughing at the bar" /></div>
-      <div class="g-item reveal d2"><img src="photos/DSC03390.jpg" alt="New friends meeting at 4H" /></div>
-      <div class="g-item reveal"><img src="photos/DSC03434.jpg" alt="A warm hug at the bar" /></div>
-      <div class="g-item reveal d1"><img src="photos/DSC03310.jpg" alt="Two guests sharing a laugh over wine" /></div>
-      <div class="g-item reveal d2"><img src="photos/DSC03447.jpg" alt="Guests in pride colors laughing" /></div>
-      <div class="g-item reveal"><img src="photos/DSC02352.jpg" alt="Guests laughing at the table" /></div>
-      <div class="g-item reveal d1"><img src="photos/DSC03364.jpg" alt="Guests talking over drinks" /></div>
-      <div class="g-item reveal d2"><img src="photos/DSC03301.jpg" alt="Guest raising a glass" /></div>
+      <div class="g-item reveal"><img src="photos/DSC03338.jpg" alt="Guest laughing with a cocktail" width="1066" height="1600" loading="lazy" /></div>
+      <div class="g-item reveal d1"><img src="photos/DSC03350.jpg" alt="Friends laughing at the bar" width="1066" height="1600" loading="lazy" /></div>
+      <div class="g-item reveal d2"><img src="photos/DSC03390.jpg" alt="New friends meeting at 4H" width="1600" height="1066" loading="lazy" /></div>
+      <div class="g-item reveal"><img src="photos/DSC03434.jpg" alt="A warm hug at the bar" width="1600" height="1066" loading="lazy" /></div>
+      <div class="g-item reveal d1"><img src="photos/DSC03310.jpg" alt="Two guests sharing a laugh over wine" width="1600" height="1066" loading="lazy" /></div>
+      <div class="g-item reveal d2"><img src="photos/DSC03447.jpg" alt="Guests in pride colors laughing" width="1066" height="1600" loading="lazy" /></div>
+      <div class="g-item reveal"><img src="photos/DSC02352.jpg" alt="Guests laughing at the table" width="1600" height="1066" loading="lazy" /></div>
+      <div class="g-item reveal d1"><img src="photos/DSC03364.jpg" alt="Guests talking over drinks" width="1600" height="1066" loading="lazy" /></div>
+      <div class="g-item reveal d2"><img src="photos/DSC03301.jpg" alt="Guest raising a glass" width="1600" height="1066" loading="lazy" /></div>
+    </div>
+
+    <p class="g-divider reveal">From earlier First Fridays</p>
+    <div class="gallery-masonry">
+      <div class="g-item reveal"><img src="photos/DSC00147-web.jpg" alt="Three friends arm in arm by the pool table, all grinning" width="1080" height="720" loading="lazy" /></div>
+      <div class="g-item reveal d1"><img src="photos/DSC00260.jpg" alt="A guest laughing mid-conversation with someone he just met" width="480" height="720" loading="lazy" /></div>
+      <div class="g-item reveal d2"><img src="photos/DSC00242.jpg" alt="Filling out raffle tickets at the charity table, cupcake in hand behind him" width="1080" height="720" loading="lazy" /></div>
+      <div class="g-item reveal"><img src="photos/DSC00298.jpg" alt="Two guests smiling at each other in a crowded room" width="480" height="720" loading="lazy" /></div>
+      <div class="g-item reveal d1"><img src="photos/DSC00142.jpg" alt="The raffle table sign, five dollars a ticket, every dollar for a local cause" width="1080" height="720" loading="lazy" /></div>
+      <div class="g-item reveal d2"><img src="photos/DSC00220.jpg" alt="A cocktail coming together over ice at the hotel bar" width="480" height="720" loading="lazy" /></div>
+      <div class="g-item reveal"><img src="photos/DSC00136.jpg" alt="A tray of cupcakes under rainbow sprinkles, waiting by the window" width="1080" height="720" loading="lazy" /></div>
+      <div class="g-item reveal d1"><img src="photos/DSC00285.jpg" alt="The bartender pouring a round for the room" width="480" height="720" loading="lazy" /></div>
+      <div class="g-item reveal d2"><img src="photos/DSC00223.jpg" alt="Tap handles at the hotel bar, ready for the crowd" width="480" height="720" loading="lazy" /></div>
     </div>
     <div class="gallery-footer">
       <a href="https://www.instagram.com/homohotelhappyhour/" target="_blank" rel="noopener" class="btn btn-flamingo">More Photos on Instagram &rsaquo;</a>
@@ -2188,7 +2256,7 @@
 
       <details class="faq-item" style="border-top:1px solid rgba(246,238,219,0.18);border-bottom:1px solid rgba(246,238,219,0.18);padding:1.15rem 0;">
         <summary style="cursor:pointer;font-family:'Josefin Sans',sans-serif;font-weight:600;font-size:1.15rem;letter-spacing:0.01em;">How do I attend or get involved?</summary>
-        <p style="margin-top:0.8rem;opacity:0.86;line-height:1.65;">Just show up on the first Friday, or RSVP on Meetup and join our Facebook group so you never miss a venue announcement. Want to nominate a charity or co-host? Message us on Instagram @homohotelhappyhour.</p>
+        <p style="margin-top:0.8rem;opacity:0.86;line-height:1.65;">Just show up on the first Friday. To get the venue in your inbox, <a href="signup.html" style="color:var(--gold);">join our email list</a>, or RSVP on Meetup and join our Facebook group so you never miss a venue announcement. Want to nominate a charity or co-host? Message us on Instagram @homohotelhappyhour.</p>
       </details>
     </div>
   </section>
@@ -2201,6 +2269,7 @@
     <p>No cover. No dress code. Just great drinks, a great crowd, and a great cause. First Friday of every month, Tulsa.</p>
     <div class="cta-btns">
       <a href="https://www.meetup.com/tulsa-4h-homo-hotel-happy-hour/" target="_blank" rel="noopener" class="btn btn-flamingo">RSVP on Meetup</a>
+      <a href="signup.html" class="btn btn-turquoise">Email Me the Venue &rsaquo;</a>
       <a href="https://venmo.com/u/homohotelhappyhour" target="_blank" rel="noopener" class="btn btn-gold">Donate on Venmo</a>
       <a href="https://linktr.ee/homohotelhappyhour" target="_blank" rel="noopener" class="btn btn-ghost-light">All Our Links</a>
     </div>
@@ -2213,7 +2282,7 @@
 <div class="gps-preferred" style="margin:0 0 1.25rem;padding:.85rem 1rem;border:1px solid rgba(128,128,128,.35);border-radius:10px;display:flex;flex-wrap:wrap;align-items:center;gap:.75rem;font-size:.95rem;line-height:1.45">
   <span>Want HHHH to show up more often in your Google results?</span>
   <div google-add-preferred-source-btn data-theme="light" data-lang="en"></div>
-  <noscript><a href="https://www.google.com/preferences/source?q=hhhh.org" rel="nofollow">Add HHHH as a preferred source in Google</a></noscript>
+  <noscript><a href="https://www.google.com/preferences/source?q=homohotelhappyhour.com" rel="nofollow">Add HHHH as a preferred source in Google</a></noscript>
 </div>
 <script data-gps-preferred-source-track>
 /* Measure the button. Google renders it inside a cross-origin iframe, so a real
@@ -2227,7 +2296,7 @@
     var wrap = document.querySelector('.gps-preferred');
     if (!wrap || !window.IntersectionObserver) return;
     function send(name, extra) {
-      var p = Object.assign({ site: 'hhhh.org', placement: 'footer' }, extra || {});
+      var p = Object.assign({ site: 'homohotelhappyhour.com', placement: 'footer' }, extra || {});
       if (typeof window.gtag === 'function') { window.gtag('event', name, p); return; }
       if (window.dataLayer && window.dataLayer.push) { p.event = name; window.dataLayer.push(p); }
     }
@@ -2269,6 +2338,7 @@
           <li><a href="#next-event">Next Event</a></li>
           <li><a href="#gallery">Photo Gallery</a></li>
           <li><a href="#charity">Charity</a></li>
+          <li><a href="signup.html">Email List</a></li>
           <li><a href="https://venmo.com/u/homohotelhappyhour" target="_blank" rel="noopener">Donate</a></li>
           <li><a href="https://www.meetup.com/tulsa-4h-homo-hotel-happy-hour/" target="_blank" rel="noopener">RSVP on Meetup</a></li>
         </ul>
