@@ -1912,7 +1912,7 @@
         <span class="stat-note">across all events and growing</span>
       </div>
       <div class="stat reveal d1">
-        <span class="stat-num" id="stat-events">4</span>
+        <span class="stat-num" id="stat-events">7</span>
         <span class="stat-label">Events Hosted</span>
         <span class="stat-note">Tulsa&rsquo;s best venues, every month</span>
       </div>
@@ -2474,17 +2474,57 @@
     }, { threshold: 0.5 });
     document.querySelectorAll('.stat-num[data-target]').forEach(el => statObs.observe(el));
 
-    /* ── EVENT / CHARITY COUNT (auto-increments monthly) ── */
+    /* ── EVENT / CHARITY COUNT ─────────────────────
+       Fixed 2026-09-09. Two defects were live here:
+
+       1. It counted the CURRENT month as already hosted, so on 2026-09-09 it
+          rendered 8 while only 7 events (Feb through Aug) had actually happened.
+          "Events Hosted" is past tense, so an event counts once its date passes.
+       2. It set Charities Supported to the same number as events, which nothing
+          supports: the same cause can be featured more than once, and only four
+          beneficiaries are named anywhere on this page. That was an invented
+          figure sitting next to real ones.
+
+       The static values in the markup are kept in step with what this computes,
+       so a crawler that does not run JS sees the same numbers a person does.
+       That mismatch is the same machine-versus-human split that had the FAQ
+       telling humans the venue was "to be announced" while the schema named it.
+    ─────────────────────────────────────────────── */
     (function() {
-      // First event: February 2026. One event per month.
+      // 4H is the first Friday of the month, first event February 2026.
+      // Documented exceptions, month key -> the day it actually ran:
+      const EXCEPTIONS = { '2026-09': 11 };   // Labor Day weekend shift
+
+      function eventDay(year, monthIdx) {
+        const key = year + '-' + String(monthIdx + 1).padStart(2, '0');
+        if (EXCEPTIONS[key]) return EXCEPTIONS[key];
+        // first Friday: day 1 plus the offset to Friday (5)
+        const dow = new Date(year, monthIdx, 1).getDay();
+        return 1 + ((5 - dow) + 7) % 7;
+      }
+
       const now = new Date();
-      const startYear = 2026, startMonth = 1; // Feb = index 1
-      const elapsed = (now.getFullYear() - startYear) * 12 + (now.getMonth() - startMonth);
-      const count = Math.max(1, elapsed + 1);
+      let hosted = 0;
+      for (let y = 2026, m = 1; y < now.getFullYear() || (y === now.getFullYear() && m <= now.getMonth()); m++) {
+        if (m > 11) { m = -1; y++; continue; }
+        const d = new Date(y, m, eventDay(y, m), 23, 59);
+        if (d <= now) hosted++;
+      }
+
+      // Beneficiaries we can actually name on this page. Add to this list only
+      // when the name is on the page or in a sourced record, never to make the
+      // number bigger.
+      const BENEFICIARIES = [
+        'Council Oak Men’s Chorale',
+        'Queer Lit Collective',
+        'Oklahomans for Equality',
+        'PFLAG Tulsa',
+      ];
+
       const evEl = document.getElementById('stat-events');
       const chEl = document.getElementById('stat-charities');
-      if (evEl) evEl.textContent = count;
-      if (chEl) chEl.textContent = count;
+      if (evEl) evEl.textContent = Math.max(1, hosted);
+      if (chEl) chEl.textContent = BENEFICIARIES.length;
     })();
 
     /* ── NAV BG ON SCROLL ────────────────────────── */
