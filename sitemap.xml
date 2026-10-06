@@ -2,17 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://homohotelhappyhour.com/</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://homohotelhappyhour.com/signup.html</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <!-- signup-thanks.html is deliberately absent. It is the post-submit
-       confirmation page, so it is a bad search entry point and it carries
-       noindex,follow instead. -->
+  <!-- signup.html and signup-thanks.html are deliberately absent. They are a
+       bare email form and its post-submit confirmation, so neither is a good
+       search entry point. Both carry noindex,follow, and a sitemap should list
+       only pages meant to be indexed. The homepage links to signup.html. -->
 </urlset>
