@@ -6,8 +6,8 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <!-- signup.html and signup-thanks.html are deliberately absent. They are a
-       bare email form and its post-submit confirmation, so neither is a good
+  <!-- The email list form and its thank-you page are deliberately absent. They
+       are a bare form and its post-submit confirmation, so neither is a good
        search entry point. Both carry noindex,follow, and a sitemap should list
-       only pages meant to be indexed. The homepage links to signup.html. -->
+       only pages meant to be indexed. The homepage links to the form. -->
 </urlset>
